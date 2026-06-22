@@ -57,18 +57,6 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={`mailto:${contactInfo.email}`}>
-                  <Icon name="mail" size={16} />
-                  {contactInfo.email}
-                </a>
-              </li>
-              <li>
-                <a href={`https://${contactInfo.site}`} target="_blank" rel="noopener noreferrer">
-                  <Icon name="globe" size={16} />
-                  {contactInfo.site}
-                </a>
-              </li>
-              <li>
                 <span>
                   <Icon name="pin" size={16} />
                   {contactInfo.address}

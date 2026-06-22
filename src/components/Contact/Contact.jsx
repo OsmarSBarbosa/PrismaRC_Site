@@ -14,22 +14,10 @@ export default function Contact() {
       href: telUrl(),
     },
     {
-      icon: 'mail',
-      label: contact.emailLabel,
-      value: contactInfo.email,
-      href: `mailto:${contactInfo.email}`,
-    },
-    {
       icon: 'pin',
       label: contact.addressLabel,
       value: contactInfo.address,
       href: mapsUrl(),
-    },
-    {
-      icon: 'globe',
-      label: contact.siteLabel,
-      value: contactInfo.site,
-      href: `https://${contactInfo.site}`,
     },
   ];
 

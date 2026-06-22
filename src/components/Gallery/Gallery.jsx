@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { strings } from '../../i18n/pt-BR';
+import { asset } from '../../utils/asset';
 import './Gallery.css';
 
 // Imagens do empreendimento e do material de divulgação.
 const photos = [
-  { src: '/brand/hero-aerial.jpg', caption: 'Avenida principal com palmeiras imperiais', span: 'wide' },
-  { src: '/brand/planta-loteamento-2.jpeg', caption: 'Planta de implantação — 98 lotes' },
-  { src: '/brand/mapa-acessos.jpg', caption: 'Localização e acessos' },
-  { src: '/brand/infra-aerial.jpg', caption: 'Infraestrutura completa e pronta para construir', span: 'wide' },
-  { src: '/brand/outdoor.jpg', caption: 'Prisma Empresarial' },
+  { src: asset('brand/hero-aerial.jpg'), caption: 'Avenida principal com palmeiras imperiais', span: 'wide' },
+  { src: asset('brand/planta-loteamento-2.jpeg'), caption: 'Planta de implantação — 98 lotes' },
+  { src: asset('brand/mapa-acessos.jpg'), caption: 'Localização e acessos' },
+  { src: asset('brand/infra-aerial.jpg'), caption: 'Infraestrutura completa e pronta para construir', span: 'wide' },
+  { src: asset('brand/outdoor.jpg'), caption: 'Prisma Empresarial' },
 ];
 
 export default function Gallery() {

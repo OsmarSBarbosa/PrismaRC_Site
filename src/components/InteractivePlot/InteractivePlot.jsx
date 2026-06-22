@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { strings } from '../../i18n/pt-BR';
 import { whatsappUrl } from '../../utils/contact';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './InteractivePlot.css';
 
@@ -30,7 +31,7 @@ export default function InteractivePlot() {
             title="Clique para ampliar"
           >
             <img
-              src="/brand/planta-loteamento-2.jpeg"
+              src={asset('brand/planta-loteamento-2.jpeg')}
               alt={interactivePlot.planAlt}
               loading="lazy"
             />
@@ -72,7 +73,7 @@ export default function InteractivePlot() {
           role="dialog"
           aria-label={interactivePlot.planAlt}
         >
-          <img src="/brand/planta-loteamento-2.jpeg" alt={interactivePlot.planAlt} />
+          <img src={asset('brand/planta-loteamento-2.jpeg')} alt={interactivePlot.planAlt} />
         </div>
       )}
     </section>

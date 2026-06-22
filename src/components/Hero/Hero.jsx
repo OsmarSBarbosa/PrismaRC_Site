@@ -1,4 +1,5 @@
 import { strings } from '../../i18n/pt-BR';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './Hero.css';
 
@@ -6,7 +7,10 @@ export default function Hero() {
   const { hero } = strings;
   return (
     <section id="home" className="hero">
-      <div className="hero__bg" />
+      <div
+        className="hero__bg"
+        style={{ backgroundImage: `url(${asset('brand/hero-aerial.jpg')})` }}
+      />
       <div className="hero__overlay" />
       <div className="hero__inner container">
         <div className="hero__content">

@@ -1,4 +1,5 @@
 import { strings } from '../../i18n/pt-BR';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './About.css';
 
@@ -9,7 +10,7 @@ export default function About() {
       <div className="about__inner container">
         <div className="about__media">
           <img
-            src="/brand/infra-aerial.jpg"
+            src={asset('brand/infra-aerial.jpg')}
             alt="Vista aérea da avenida principal do Prisma Empresarial"
             loading="lazy"
           />

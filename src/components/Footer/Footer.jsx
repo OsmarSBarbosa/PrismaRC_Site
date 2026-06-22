@@ -1,5 +1,6 @@
 import { strings, contactInfo } from '../../i18n/pt-BR';
 import { whatsappUrl, telUrl } from '../../utils/contact';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './Footer.css';
 
@@ -31,7 +32,7 @@ export default function Footer() {
       <footer className="footer">
         <div className="container footer__top">
           <div className="footer__brand">
-            <img src="/brand/logo-prisma-white.png" alt="Prisma Empresarial" />
+            <img src={asset('brand/logo-prisma-white.png')} alt="Prisma Empresarial" />
             <p>{footer.tagline}</p>
           </div>
 

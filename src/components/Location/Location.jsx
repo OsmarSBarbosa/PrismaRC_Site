@@ -1,5 +1,6 @@
 import { strings } from '../../i18n/pt-BR';
 import { mapsUrl } from '../../utils/contact';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './Location.css';
 
@@ -55,7 +56,7 @@ export default function Location() {
               className="location__map-link"
             >
               <img
-                src="/brand/mapa-acessos.jpg"
+                src={asset('brand/mapa-acessos.jpg')}
                 alt={location.mapAlt}
                 loading="lazy"
               />

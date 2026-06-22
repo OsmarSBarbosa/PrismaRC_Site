@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { strings } from '../../i18n/pt-BR';
 import { whatsappUrl } from '../../utils/contact';
+import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './Navbar.css';
 
@@ -36,7 +37,7 @@ export default function Navbar() {
           onClick={close}
           aria-label="Prisma Empresarial"
         >
-          <img src="/brand/logo-prisma.png" alt="Prisma Empresarial" />
+          <img src={asset('brand/logo-prisma.png')} alt="Prisma Empresarial" />
         </a>
 
         <nav className={`navbar__nav ${open ? 'is-open' : ''}`}>

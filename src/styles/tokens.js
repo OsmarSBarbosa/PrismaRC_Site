@@ -1,32 +1,34 @@
-// Design tokens — cores, tipografia e espaçamentos do site Prisma Loteamentos
+// Design tokens — identidade visual Prisma Empresarial.
+// Baseado na marca: losango azul-marinho + wordmark preto.
 // Atualize aqui para refletir em todo o projeto.
 
 export const colors = {
-  // Primárias — a definir com guidelines
-  primary: '#2C6E49',
-  primaryLight: '#4C956C',
-  primaryDark: '#1B4332',
+  // Primárias — azul-marinho da marca
+  primary: '#283A6B',
+  primaryLight: '#3A5089',
+  primaryDark: '#1B2547',
 
-  // Secundárias
-  secondary: '#F4A261',
-  secondaryLight: '#FCDAB3',
+  // Acento — azul claro (usado em destaques: "FUTURO", "COMPLETA")
+  accent: '#3E86C9',
+  accentLight: '#5AA0E0',
 
   // Neutros
+  black: '#1A1A1A',
   white: '#FFFFFF',
-  offWhite: '#F9F7F2',
-  gray100: '#F0EDEA',
-  gray300: '#C4BDB7',
-  gray500: '#8B8178',
-  gray700: '#4A4440',
-  black: '#1A1614',
+  offWhite: '#F5F6F8',
+  gray100: '#ECEEF2',
+  gray300: '#CBD0DA',
+  gray500: '#8A91A1',
+  gray700: '#4A5160',
 
   // Feedback
-  success: '#38A169',
-  error: '#E53E3E',
+  success: '#2E9E5B',
+  warning: '#E0A615',
+  error: '#D64545',
 };
 
 export const fonts = {
-  heading: "'Playfair Display', Georgia, serif",
+  heading: "'Montserrat', 'Helvetica Neue', Arial, sans-serif",
   body: "'Inter', 'Helvetica Neue', Arial, sans-serif",
 };
 
@@ -40,12 +42,13 @@ export const fontSizes = {
   '3xl': '1.875rem',
   '4xl': '2.25rem',
   '5xl': '3rem',
+  '6xl': '3.75rem',
 };
 
 export const spacing = {
-  section: '5rem',       // padding vertical entre seções
-  container: '1200px',   // largura máxima do conteúdo
-  gutter: '1.5rem',      // padding lateral em mobile
+  section: '5rem', // padding vertical entre seções
+  container: '1180px', // largura máxima do conteúdo
+  gutter: '1.5rem', // padding lateral em mobile
 };
 
 export const breakpoints = {
@@ -63,7 +66,7 @@ export const borderRadius = {
 };
 
 export const shadows = {
-  sm: '0 1px 3px rgba(0,0,0,0.12)',
-  md: '0 4px 12px rgba(0,0,0,0.1)',
-  lg: '0 8px 30px rgba(0,0,0,0.12)',
+  sm: '0 1px 3px rgba(27, 37, 71, 0.12)',
+  md: '0 6px 18px rgba(27, 37, 71, 0.12)',
+  lg: '0 14px 40px rgba(27, 37, 71, 0.16)',
 };

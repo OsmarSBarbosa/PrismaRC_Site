@@ -1,0 +1,52 @@
+.tagline {
+  background: var(--navy-dark);
+  color: var(--white);
+  text-align: center;
+  padding-block: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.tagline::before {
+  /* losango da marca como marca d'água */
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 60px solid rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+}
+
+.tagline__inner {
+  position: relative;
+  z-index: 1;
+}
+
+.tagline__mark {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 1.5rem;
+  transform: rotate(45deg);
+  border: 5px solid var(--accent);
+  border-radius: 3px;
+}
+
+.tagline__quote {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.tagline__sub {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}

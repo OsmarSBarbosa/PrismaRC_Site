@@ -1,0 +1,124 @@
+.interest {
+  background: var(--off-white);
+}
+
+.interest__card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.interest__aside {
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--white);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.interest__aside::after {
+  content: '';
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 240px;
+  height: 240px;
+  transform: rotate(45deg);
+  border: 40px solid rgba(255, 255, 255, 0.04);
+}
+
+.interest__aside .section-tag {
+  color: var(--accent-light);
+}
+
+.interest__title {
+  color: var(--white);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 1rem;
+}
+
+.interest__sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+
+.interest__wpp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.interest__wpp:hover {
+  color: var(--accent-light);
+}
+
+.interest__form {
+  padding: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.interest__form input,
+.interest__form textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--navy-dark);
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: vertical;
+}
+
+.interest__form input::placeholder,
+.interest__form textarea::placeholder {
+  color: var(--gray-500);
+}
+
+.interest__form input:focus,
+.interest__form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(62, 134, 201, 0.15);
+}
+
+.interest__submit {
+  margin-top: 0.25rem;
+  width: 100%;
+}
+
+.interest__success {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--success);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 820px) {
+  .interest__card {
+    grid-template-columns: 1fr;
+  }
+
+  .interest__aside,
+  .interest__form {
+    padding: 2.25rem;
+  }
+}

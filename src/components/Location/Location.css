@@ -1,0 +1,121 @@
+.location__head {
+  max-width: 760px;
+  margin-bottom: 3rem;
+}
+
+.location__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.location__panels {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.location__panel {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.location__panel-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.05rem;
+  color: var(--navy);
+  margin-bottom: 1rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.location__panel ul {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.location__panel li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--gray-100);
+  font-size: 0.95rem;
+}
+
+.location__panel li:last-child {
+  border-bottom: none;
+}
+
+.location__panel li span {
+  color: var(--gray-700);
+}
+
+.location__panel li strong {
+  font-family: var(--font-heading);
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.location__map-link {
+  position: relative;
+  display: block;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.location__map-link img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.location__map-link:hover img {
+  transform: scale(1.03);
+}
+
+.location__map-btn {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.1rem;
+}
+
+.location__landmarks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.location__landmarks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  color: var(--navy-dark);
+  font-weight: 500;
+}
+
+.location__landmarks li svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .location__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location__landmarks {
+    grid-template-columns: 1fr;
+  }
+}

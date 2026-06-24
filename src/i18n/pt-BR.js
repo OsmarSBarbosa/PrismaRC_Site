@@ -8,7 +8,7 @@ export const contactInfo = {
   email: 'contato@prismaempresarial.com.br',
   site: 'www.prismaempresarial.com.br',
   address: 'Rua Ampac, 134 — Distrito Industrial, Rio Claro/SP',
-  mapsQuery: 'Distrito Industrial Rio Claro SP',
+  mapsQuery: 'Rua Ampac, 134, Rio Claro - SP',
 };
 
 export const strings = {
@@ -34,7 +34,7 @@ export const strings = {
     ctaSecondary: 'Ver os lotes',
     stats: [
       { value: '600m²', label: 'Lotes a partir de' },
-      { value: '98', label: 'Lotes disponíveis' },
+      { value: '98', label: 'Lotes' },
       { value: '+100mil m²', label: 'De área útil' },
       { value: 'CETESB', label: 'Licenciado (FC 5)' },
     ],
@@ -92,7 +92,7 @@ export const strings = {
         icon: 'avenue',
         title: 'Avenida principal',
         description:
-          'Pista dupla com canteiro central arborizado por palmeiras imperiais e ciclovia exclusiva.',
+          'Pista dupla com canteiro central arborizado por palmeiras imperiais e ciclovia.',
       },
       {
         icon: 'parking',
@@ -124,7 +124,7 @@ export const strings = {
   // --- Localização ---
   location: {
     tag: 'Localização',
-    heading: 'Acessos rápidos a rodovias, cidades e aeroportos.',
+    heading: 'Acessos rápidos a rodovias.',
     intro:
       'Localizado em Rio Claro/SP, o Prisma Empresarial tem acesso facilitado às principais rodovias da região, conectando sua empresa aos maiores centros econômicos do interior paulista.',
     highwaysTitle: 'Principais acessos',
@@ -163,12 +163,11 @@ export const strings = {
     tag: 'Lotes',
     heading: 'O espaço que sua empresa precisar.',
     subheading:
-      'Lotes a partir de 600m² com possibilidade de composição de áreas de até 10.000m². Clique em um lote no mapa para saber a disponibilidade.',
+      'Lotes a partir de 600m² com possibilidade de composição de áreas de até 10.000m². Clique na planta para ampliar e fale com um consultor para conferir a disponibilidade.',
     planAlt: 'Planta de implantação do loteamento Prisma Empresarial',
-    legendTitle: 'Legenda',
-    availableLabel: 'Disponível',
-    soldLabel: 'Vendido',
-    reservedLabel: 'Reservado',
+    asideTitle: 'Garanta o seu lote',
+    asideText:
+      'Consulte a disponibilidade atualizada, os valores e as opções de composição de áreas com um de nossos consultores.',
     areaLabel: 'Área',
     areaUnit: 'm²',
     ctaText: 'Consultar disponibilidade e valores',

@@ -38,6 +38,10 @@ export default function Contact() {
               <Icon name="whatsapp" size={20} />
               {contact.whatsappLabel}
             </a>
+            <a href={telUrl()} className="contact__phone">
+              <Icon name="phone" size={18} />
+              {contactInfo.phoneDisplay}
+            </a>
           </div>
 
           <ul className="contact__list">

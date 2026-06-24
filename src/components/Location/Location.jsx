@@ -1,6 +1,5 @@
 import { strings } from '../../i18n/pt-BR';
-import { mapsUrl } from '../../utils/contact';
-import { asset } from '../../utils/asset';
+import { mapsUrl, mapsEmbedUrl } from '../../utils/contact';
 import Icon from '../Icon/Icon';
 import './Location.css';
 
@@ -49,21 +48,23 @@ export default function Location() {
           </div>
 
           <div className="location__map">
+            <div className="location__embed">
+              <iframe
+                title={location.mapAlt}
+                src={mapsEmbedUrl()}
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
             <a
               href={mapsUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="location__map-link"
+              className="btn btn-primary location__map-btn"
             >
-              <img
-                src={asset('brand/mapa-acessos.jpg')}
-                alt={location.mapAlt}
-                loading="lazy"
-              />
-              <span className="btn btn-primary location__map-btn">
-                <Icon name="map" size={18} />
-                {location.mapCta}
-              </span>
+              <Icon name="map" size={18} />
+              {location.mapCta}
             </a>
 
             <ul className="location__landmarks">

@@ -8,9 +8,6 @@ const navLinks = [
   { label: strings.nav.about, href: '#about' },
   { label: strings.nav.features, href: '#features' },
   { label: strings.nav.location, href: '#location' },
-  { label: strings.nav.lots, href: '#lots' },
-  { label: strings.nav.gallery, href: '#gallery' },
-  { label: strings.nav.contact, href: '#contact' },
 ];
 
 export default function Footer() {

@@ -8,12 +8,6 @@ export default function Contact() {
 
   const items = [
     {
-      icon: 'phone',
-      label: contact.phoneLabel,
-      value: contactInfo.phoneDisplay,
-      href: telUrl(),
-    },
-    {
       icon: 'pin',
       label: contact.addressLabel,
       value: contactInfo.address,

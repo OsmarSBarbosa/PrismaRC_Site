@@ -48,7 +48,6 @@ export default function InteractivePlot() {
               <Icon name="whatsapp" size={20} />
               {interactivePlot.ctaText}
             </a>
-            <p className="plot__note">{interactivePlot.note}</p>
           </aside>
         </div>
       </div>

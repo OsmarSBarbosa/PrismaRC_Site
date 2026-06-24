@@ -87,13 +87,6 @@
   color: var(--navy-dark);
 }
 
-.plot__note {
-  margin-top: 1.25rem;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.5;
-}
-
 /* Lightbox */
 .plot__lightbox {
   position: fixed;

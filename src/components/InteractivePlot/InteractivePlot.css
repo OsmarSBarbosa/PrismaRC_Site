@@ -49,65 +49,48 @@
   color: var(--white);
 }
 
-.plot__legend {
+.plot__aside {
   position: sticky;
   top: calc(var(--nav-height) + 1rem);
-  background: var(--white);
-  border: 1px solid var(--gray-100);
+  background: var(--navy);
+  color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-sm);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-md);
 }
 
-.plot__legend h3 {
-  font-size: 1.05rem;
-  color: var(--navy);
-  margin-bottom: 1rem;
+.plot__aside-title {
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 0.75rem;
 }
 
-.plot__legend ul {
-  display: grid;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.plot__legend li {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
+.plot__aside-text {
   font-size: 0.95rem;
-  color: var(--gray-700);
-}
-
-.plot__dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.plot__dot.is-available {
-  background: var(--success);
-}
-
-.plot__dot.is-reserved {
-  background: var(--warning);
-}
-
-.plot__dot.is-sold {
-  background: var(--error);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.5rem;
 }
 
 .plot__cta {
   width: 100%;
-  font-size: 0.88rem;
-  padding: 0.85rem 1rem;
+  font-size: 0.92rem;
+  padding: 0.95rem 1rem;
+  background: #25d366;
+  color: var(--navy);
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.35);
+}
+
+.plot__cta:hover {
+  background: #2ee06f;
+  color: var(--navy-dark);
 }
 
 .plot__note {
   margin-top: 1.25rem;
   font-size: 0.78rem;
-  color: var(--gray-500);
+  color: rgba(255, 255, 255, 0.6);
   line-height: 1.5;
 }
 

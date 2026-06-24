@@ -47,6 +47,26 @@
   font-size: 1rem;
 }
 
+.contact__phone {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--white);
+}
+
+.contact__phone svg {
+  color: var(--accent-light);
+}
+
+.contact__phone:hover {
+  color: var(--accent-light);
+}
+
 .contact__list {
   display: grid;
   grid-template-columns: 1fr 1fr;

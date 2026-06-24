@@ -9,12 +9,6 @@ export default function InteractivePlot() {
   const { interactivePlot } = strings;
   const [zoomed, setZoomed] = useState(false);
 
-  const legend = [
-    { className: 'is-available', label: interactivePlot.availableLabel },
-    { className: 'is-reserved', label: interactivePlot.reservedLabel },
-    { className: 'is-sold', label: interactivePlot.soldLabel },
-  ];
-
   return (
     <section id="lots" className="plot section">
       <div className="container">
@@ -31,7 +25,7 @@ export default function InteractivePlot() {
             title="Clique para ampliar"
           >
             <img
-              src={asset('brand/planta-loteamento-2.jpeg')}
+              src={asset('brand/planta-loteamento.jpeg')}
               alt={interactivePlot.planAlt}
               loading="lazy"
             />
@@ -40,25 +34,18 @@ export default function InteractivePlot() {
             </span>
           </figure>
 
-          <aside className="plot__legend">
-            <h3>{interactivePlot.legendTitle}</h3>
-            <ul>
-              {legend.map((item) => (
-                <li key={item.label}>
-                  <span className={`plot__dot ${item.className}`} />
-                  {item.label}
-                </li>
-              ))}
-            </ul>
+          <aside className="plot__aside">
+            <h3 className="plot__aside-title">{interactivePlot.asideTitle}</h3>
+            <p className="plot__aside-text">{interactivePlot.asideText}</p>
             <a
               href={whatsappUrl(
                 'Olá! Gostaria de consultar a disponibilidade e os valores dos lotes do Prisma Empresarial.'
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-whatsapp plot__cta"
+              className="btn plot__cta"
             >
-              <Icon name="whatsapp" size={18} />
+              <Icon name="whatsapp" size={20} />
               {interactivePlot.ctaText}
             </a>
             <p className="plot__note">{interactivePlot.note}</p>
@@ -73,7 +60,7 @@ export default function InteractivePlot() {
           role="dialog"
           aria-label={interactivePlot.planAlt}
         >
-          <img src={asset('brand/planta-loteamento-2.jpeg')} alt={interactivePlot.planAlt} />
+          <img src={asset('brand/planta-loteamento.jpeg')} alt={interactivePlot.planAlt} />
         </div>
       )}
     </section>

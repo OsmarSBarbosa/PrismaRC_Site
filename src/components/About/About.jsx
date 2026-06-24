@@ -10,7 +10,7 @@ export default function About() {
       <div className="about__inner container">
         <div className="about__media">
           <img
-            src={asset('brand/infra-aerial.jpg')}
+            src={asset('brand/hero-aerial.jpg')}
             alt="Vista aérea da avenida principal do Prisma Empresarial"
             loading="lazy"
           />

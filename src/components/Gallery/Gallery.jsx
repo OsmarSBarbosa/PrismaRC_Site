@@ -3,13 +3,12 @@ import { strings } from '../../i18n/pt-BR';
 import { asset } from '../../utils/asset';
 import './Gallery.css';
 
-// Imagens do empreendimento e do material de divulgação.
+// Imagens do empreendimento.
 const photos = [
-  { src: asset('brand/hero-aerial.jpg'), caption: 'Avenida principal com palmeiras imperiais', span: 'wide' },
-  { src: asset('brand/planta-loteamento-2.jpeg'), caption: 'Planta de implantação — 98 lotes' },
-  { src: asset('brand/mapa-acessos.jpg'), caption: 'Localização e acessos' },
-  { src: asset('brand/infra-aerial.jpg'), caption: 'Infraestrutura completa e pronta para construir', span: 'wide' },
-  { src: asset('brand/outdoor.jpg'), caption: 'Prisma Empresarial' },
+  { src: asset('brand/galeria-1.jpg'), caption: 'Avenida principal com palmeiras imperiais e ciclovia' },
+  { src: asset('brand/galeria-2.jpg'), caption: 'Sistema viário e proximidade com grandes empresas' },
+  { src: asset('brand/galeria-3.jpg'), caption: 'Vista aérea do empreendimento' },
+  { src: asset('brand/galeria-4.jpg'), caption: 'Vias amplas e entrada do loteamento' },
 ];
 
 export default function Gallery() {
@@ -29,7 +28,7 @@ export default function Gallery() {
           {photos.map((photo, i) => (
             <button
               key={photo.src}
-              className={`gallery__item ${photo.span === 'wide' ? 'is-wide' : ''}`}
+              className="gallery__item"
               onClick={() => setActive(photo)}
               aria-label={photo.caption}
             >

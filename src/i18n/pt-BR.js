@@ -27,7 +27,7 @@ export const strings = {
   // --- Hero (banner principal) ---
   hero: {
     eyebrow: 'Loteamento Industrial · Rio Claro/SP',
-    title: 'O espaço estratégico da sua expansão.',
+    title: 'O espaço estratégico da sua expansão',
     subtitle:
       'Loteamento empresarial planejado para indústria, comércio e serviços. Lotes a partir de 600m², infraestrutura completa e licenciamento CETESB para qualquer atividade.',
     ctaPrimary: 'Quero saber mais',
@@ -42,7 +42,7 @@ export const strings = {
 
   // --- Tagline / Frase de efeito ---
   tagline: {
-    text: 'Sua empresa no lugar certo.',
+    text: 'Sua empresa no lugar certo',
     subtext:
       'Invista em um endereço preparado para o futuro da sua empresa.',
   },
@@ -50,7 +50,7 @@ export const strings = {
   // --- O empreendimento (sobre) ---
   about: {
     tag: 'O Empreendimento',
-    heading: 'O lugar certo para sua empresa crescer.',
+    heading: 'O lugar certo para sua empresa crescer',
     paragraphs: [
       'O Prisma Empresarial é um loteamento planejado exclusivamente para a instalação de indústrias, comércio e serviços, localizado no Distrito Industrial de Rio Claro/SP.',
       'Aqui tudo foi pensado para que a sua empresa possa trabalhar e crescer em um ambiente adequado, seguro e com fácil acesso. Um empreendimento 100% regularizado, entregue e pronto para construir.',
@@ -66,7 +66,7 @@ export const strings = {
   // --- Seção de diferenciais ---
   features: {
     tag: 'Diferenciais',
-    heading: 'Infraestrutura completa, do projeto à operação.',
+    heading: 'Infraestrutura completa, do projeto à operação',
     subheading:
       'Cada detalhe foi planejado para receber a sua empresa e o tráfego pesado da indústria.',
     items: [
@@ -124,7 +124,7 @@ export const strings = {
   // --- Localização ---
   location: {
     tag: 'Localização',
-    heading: 'Acessos rápidos a rodovias.',
+    heading: 'Acessos rápidos a rodovias',
     intro:
       'Localizado em Rio Claro/SP, o Prisma Empresarial tem acesso facilitado às principais rodovias da região, conectando sua empresa aos maiores centros econômicos do interior paulista.',
     highwaysTitle: 'Principais acessos',
@@ -161,7 +161,7 @@ export const strings = {
   // --- Planta interativa ---
   interactivePlot: {
     tag: 'Lotes',
-    heading: 'O espaço que sua empresa precisar.',
+    heading: 'O espaço que sua empresa precisar',
     subheading:
       'Lotes a partir de 600m² com possibilidade de composição de áreas de até 10.000m². Clique na planta para ampliar e fale com um consultor para conferir a disponibilidade.',
     planAlt: 'Planta de implantação do loteamento Prisma Empresarial',
@@ -171,13 +171,12 @@ export const strings = {
     areaLabel: 'Área',
     areaUnit: 'm²',
     ctaText: 'Consultar disponibilidade e valores',
-    note: 'Imagem meramente ilustrativa. Disponibilidade sujeita a alteração — consulte um corretor.',
   },
 
   // --- Galeria ---
   gallery: {
     tag: 'Galeria',
-    heading: 'Conheça o Prisma Empresarial.',
+    heading: 'Conheça o Prisma Empresarial',
     subheading: 'Imagens do empreendimento e do projeto.',
     altPrefix: 'Prisma Empresarial',
   },
@@ -185,7 +184,7 @@ export const strings = {
   // --- Formulário de interesse ---
   interestForm: {
     tag: 'Fale conosco',
-    heading: 'Garanta o seu lote no Prisma Empresarial.',
+    heading: 'Garanta o seu lote no Prisma Empresarial',
     subheading:
       'Preencha o formulário e um de nossos consultores entrará em contato para apresentar o empreendimento.',
     namePlaceholder: 'Nome completo',
@@ -202,7 +201,7 @@ export const strings = {
   // --- Contato ---
   contact: {
     tag: 'Contato',
-    heading: 'Conheça pessoalmente o empreendimento.',
+    heading: 'Conheça pessoalmente o empreendimento',
     subheading:
       'Fale com nossa equipe e agende uma visita ao Prisma Empresarial em Rio Claro/SP.',
     phoneLabel: 'Telefone / WhatsApp',
@@ -216,7 +215,7 @@ export const strings = {
 
   // --- Footer ---
   footer: {
-    tagline: 'O espaço estratégico da sua expansão.',
+    tagline: 'O espaço estratégico da sua expansão',
     rights: '© 2026 Prisma Empresarial. Todos os direitos reservados.',
     legal:
       'Projeto aprovado pela Prefeitura Municipal de Rio Claro e registrado no 1º Oficial de Registro de Imóveis de Rio Claro sob o nº R.9 da matrícula 54.383, em 08 de março de 2019. Todas as imagens são meramente ilustrativas, podendo haver diferenças no paisagismo.',

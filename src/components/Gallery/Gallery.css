@@ -10,14 +10,13 @@
 
 .gallery__grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
 }
 
 .gallery__item {
   position: relative;
-  grid-column: span 2;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   border: none;
   padding: 0;
   margin: 0;
@@ -26,11 +25,6 @@
   cursor: zoom-in;
   background: var(--gray-100);
   box-shadow: var(--shadow-sm);
-}
-
-.gallery__item.is-wide {
-  grid-column: span 3;
-  aspect-ratio: 16 / 9;
 }
 
 .gallery__item img {

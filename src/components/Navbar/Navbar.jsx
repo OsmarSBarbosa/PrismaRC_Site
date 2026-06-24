@@ -9,9 +9,6 @@ const links = [
   { key: 'about', href: '#about' },
   { key: 'features', href: '#features' },
   { key: 'location', href: '#location' },
-  { key: 'lots', href: '#lots' },
-  { key: 'gallery', href: '#gallery' },
-  { key: 'contact', href: '#contact' },
 ];
 
 export default function Navbar() {

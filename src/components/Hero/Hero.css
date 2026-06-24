@@ -97,10 +97,11 @@
 
 .hero__stats strong {
   font-family: var(--font-heading);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
   font-weight: 800;
   color: var(--white);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .hero__stats span {

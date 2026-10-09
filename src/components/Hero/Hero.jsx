@@ -9,7 +9,7 @@ export default function Hero() {
     <section id="home" className="hero">
       <div
         className="hero__bg"
-        style={{ backgroundImage: `url(${asset('brand/hero-aerial.jpg')})` }}
+        style={{ backgroundImage: `url(${asset('brand/hero-aerial.webp')})` }}
       />
       <div className="hero__overlay" />
       <div className="hero__inner container">

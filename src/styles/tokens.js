@@ -9,7 +9,8 @@ export const colors = {
   primaryDark: '#1B2547',
 
   // Acento — azul claro (usado em destaques: "FUTURO", "COMPLETA")
-  accent: '#3E86C9',
+  accent: '#2F73B5',
+  accentDark: '#255D93',
   accentLight: '#5AA0E0',
 
   // Neutros
@@ -18,7 +19,7 @@ export const colors = {
   offWhite: '#F5F6F8',
   gray100: '#ECEEF2',
   gray300: '#CBD0DA',
-  gray500: '#8A91A1',
+  gray500: '#646B78',
   gray700: '#4A5160',
 
   // Feedback

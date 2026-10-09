@@ -1,14 +1,15 @@
 import { useState } from 'react';
 import { strings } from '../../i18n/pt-BR';
 import { asset } from '../../utils/asset';
+import Lightbox from '../Lightbox/Lightbox';
 import './Gallery.css';
 
 // Imagens do empreendimento.
 const photos = [
-  { src: asset('brand/galeria-1.jpg'), caption: 'Avenida principal com palmeiras imperiais e ciclovia' },
-  { src: asset('brand/galeria-2.jpg'), caption: 'Sistema viário e proximidade com grandes empresas' },
-  { src: asset('brand/galeria-3.jpg'), caption: 'Vista aérea do empreendimento' },
-  { src: asset('brand/galeria-4.jpg'), caption: 'Vias amplas e entrada do loteamento' },
+  { src: asset('brand/galeria-1.webp'), caption: 'Avenida principal com palmeiras imperiais e ciclovia' },
+  { src: asset('brand/galeria-2.webp'), caption: 'Sistema viário e proximidade com grandes empresas' },
+  { src: asset('brand/galeria-3.webp'), caption: 'Vista aérea do empreendimento' },
+  { src: asset('brand/galeria-4.webp'), caption: 'Vias amplas e entrada do loteamento' },
 ];
 
 export default function Gallery() {
@@ -44,9 +45,11 @@ export default function Gallery() {
       </div>
 
       {active && (
-        <div className="gallery__lightbox" onClick={() => setActive(null)} role="dialog">
-          <img src={active.src} alt={`${gallery.altPrefix} — ${active.caption}`} />
-        </div>
+        <Lightbox
+          src={active.src}
+          alt={`${gallery.altPrefix} — ${active.caption}`}
+          onClose={() => setActive(null)}
+        />
       )}
     </section>
   );

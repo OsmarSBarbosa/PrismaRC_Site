@@ -2,9 +2,9 @@
 // Centralize aqui todos os textos visíveis ao usuário para facilitar edições.
 
 export const contactInfo = {
-  // WhatsApp / telefone (DDD 19). Número do material de divulgação (outdoor).
-  whatsappNumber: '5519925083792', // formato internacional p/ link wa.me
-  phoneDisplay: '(19) 92508-3792',
+  // WhatsApp / telefone (DDD 19).
+  whatsappNumber: '5519999982692', // formato internacional p/ link wa.me
+  phoneDisplay: '(19) 99998-2692',
   email: 'contato@prismaempresarial.com.br',
   site: 'www.prismaempresarial.com.br',
   address: 'Rua Ampac, 134 — Distrito Industrial, Rio Claro/SP',

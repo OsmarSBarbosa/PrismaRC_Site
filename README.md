@@ -31,4 +31,4 @@ npm run preview  # pré-visualiza o build
   abre o WhatsApp do consultor. Para integrar um backend/CRM, ajuste
   `handleSubmit` em `src/components/InterestForm/InterestForm.jsx`.
 - O número de WhatsApp/telefone está em `contactInfo` (`src/i18n/pt-BR.js`).
-  Em uso: **(19) 92508-3792** (número do material de divulgação/outdoor).
+  Em uso: **(19) 99998-2692**.

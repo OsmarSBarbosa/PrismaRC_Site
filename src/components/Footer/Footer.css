@@ -101,6 +101,16 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+.footer__privacy {
+  margin-left: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: underline;
+}
+
+.footer__privacy:hover {
+  color: var(--accent-light);
+}
+
 @media (max-width: 768px) {
   .footer__top {
     grid-template-columns: 1fr;
@@ -110,7 +120,8 @@
   .float-wpp {
     width: 54px;
     height: 54px;
-    bottom: 18px;
+    /* sobe acima do aviso de privacidade enquanto ele estiver visível */
+    bottom: calc(18px + var(--notice-h, 0px));
     right: 18px;
   }
 

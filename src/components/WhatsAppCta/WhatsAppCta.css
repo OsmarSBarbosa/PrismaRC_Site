@@ -1,0 +1,113 @@
+.wcta {
+  background: var(--off-white);
+}
+
+.wcta__card {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 3.5rem;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(150deg, var(--navy) 0%, var(--navy-dark) 100%);
+  color: var(--white);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.wcta__card::after {
+  /* losango da marca como marca d'água */
+  content: '';
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 260px;
+  height: 260px;
+  transform: rotate(45deg);
+  border: 44px solid rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.wcta__main,
+.wcta__list {
+  position: relative;
+  z-index: 1;
+}
+
+.wcta__tag {
+  color: var(--accent-light);
+}
+
+.wcta__title {
+  color: var(--white);
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  margin-bottom: 1rem;
+}
+
+.wcta__sub {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+.wcta__button {
+  font-size: 1.1rem;
+  padding: 1.1rem 2rem;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.wcta__phone {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  margin-top: 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.wcta__phone svg {
+  color: var(--accent-light);
+}
+
+.wcta__phone:hover {
+  color: var(--white);
+}
+
+.wcta__list {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.wcta__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.wcta__list svg {
+  flex-shrink: 0;
+  color: #25d366;
+}
+
+@media (max-width: 860px) {
+  .wcta__card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2.25rem 1.5rem;
+  }
+
+  .wcta__button {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    white-space: nowrap;
+  }
+}

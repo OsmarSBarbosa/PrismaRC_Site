@@ -28,11 +28,12 @@ export default function Contact() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp contact__cta"
+              data-botao="contato"
             >
               <Icon name="whatsapp" size={20} />
               {contact.whatsappLabel}
             </a>
-            <a href={telUrl()} className="contact__phone">
+            <a href={telUrl()} className="contact__phone" data-botao="contato-telefone">
               <Icon name="phone" size={18} />
               {contactInfo.phoneDisplay}
             </a>

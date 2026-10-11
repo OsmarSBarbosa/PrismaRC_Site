@@ -1,85 +1,75 @@
-# Gravar os contatos do formulário no Google Planilhas
+# Registrar os cliques de WhatsApp e telefone no Google Planilhas
 
-Quando alguém envia o formulário do site, o contato é gravado numa planilha do
-Google e, em seguida, o WhatsApp abre com a mensagem pronta (como antes). Assim
-nenhum contato se perde, mesmo que a pessoa desista de enviar no WhatsApp.
+O site não tem formulário: o contato acontece pelo WhatsApp. **Cada clique** em
+um botão de WhatsApp ou de telefone grava uma linha na aba **Cliques** de uma
+planilha do Google, e o WhatsApp abre com a mensagem pronta.
 
-Cada linha da planilha traz: data/hora, nome, empresa, telefone, e-mail,
-mensagem, página de origem e os parâmetros de campanha do anúncio
-(`utm_source`, `utm_campaign`… e `li_fat_id`, o identificador de clique do
-LinkedIn).
+Cada clique recebe um **código de referência** (ex.: `PR-7K3F`) que vai na
+planilha **e** no fim da mensagem do WhatsApp (`Ref: PR-7K3F`). Quando a
+mensagem chega, procure o código na planilha para saber de onde a pessoa veio.
 
-Leva uns 10 minutos. Use a conta Google da empresa que deve ser dona dos
-contatos.
+## O que é gravado
 
-## 1. Criar a planilha
+| Grupo | Colunas |
+|---|---|
+| Clique | Data/hora, Código, Tipo (whatsapp/telefone), Botão, Página |
+| Localização (pelo IP, aproximada) | Cidade, Estado, País, CEP, Latitude, Longitude, Operadora, Organização da rede, IP |
+| Origem | Origem (site anterior), utm_source/medium/campaign/content/term, li_fat_id (LinkedIn), gclid (Google), fbclid (Meta), Página de entrada, Referrer completo |
+| Dispositivo | Dispositivo, Sistema, Navegador, Tela, Idioma, Fuso horário (aparelho e IP), User agent |
+| Comportamento | Tempo na página, Tempo no site, Rolagem máx. (%), Seções vistas |
+| Visitante | Visitante (identificador aleatório), Nº de visitas, Primeira visita |
 
-1. Acesse <https://sheets.new> e dê um nome, por exemplo
-   **Prisma Empresarial — Contatos do site**.
-2. Não precisa criar colunas: a aba **Contatos** é criada automaticamente no
-   primeiro envio.
+Botões registrados (`Botão`): `menu`, `flutuante`, `lotes`, `fale-conosco`,
+`contato`, e os de telefone `fale-conosco-telefone`, `contato-telefone`,
+`rodape-telefone`.
 
-## 2. Colar o script
+**Sobre a localização:** vem do serviço gratuito [ipwhois.io](https://ipwhois.io)
+(1.000 consultas por dia para o site todo; a consulta é feita uma vez por
+visita, na primeira interação). É aproximada: em internet móvel, costuma
+indicar a cidade da central da operadora. Se o serviço não responder em 2 s,
+a linha é gravada com `Cidade = indisponível`.
 
-1. Na planilha, menu **Extensões → Apps Script**.
-2. Apague o conteúdo do arquivo `Código.gs` e cole todo o conteúdo de
-   [`docs/apps-script/leads.gs`](apps-script/leads.gs).
-3. (Opcional) Para receber um e-mail a cada contato, preencha
-   `NOTIFY_EMAIL` no começo do script, por exemplo
-   `const NOTIFY_EMAIL = 'nome@suaempresa.com.br';`.
-4. Clique em **Salvar** (ícone de disquete).
+> Os dados coletados estão descritos na Política de Privacidade do site
+> (`/privacidade/`). Se mudar o que é coletado, atualize a política.
 
-## 3. Testar o script
+---
 
-1. Na barra de cima do editor, escolha a função **testar** e clique em
-   **Executar**.
-2. Na primeira vez, o Google pede autorização: **Revisar permissões** →
-   escolha a conta → se aparecer "O Google não verificou este app", clique em
-   **Avançado → Acessar (não seguro)** → **Permitir**. O aviso aparece porque o
-   script é seu e não passou por revisão do Google; ele só acessa esta
-   planilha (e o envio de e-mail, se configurado).
-3. Volte à planilha: deve existir a aba **Contatos** com uma linha "Teste".
-   Pode apagar essa linha.
+## Instalação (primeira vez)
 
-## 4. Publicar como Web App
+1. Crie uma planilha em <https://sheets.new>.
+2. Menu **Extensões → Apps Script**. Apague o conteúdo de `Código.gs` e cole o
+   conteúdo de [`docs/apps-script/leads.gs`](apps-script/leads.gs).
+3. Clique em **Salvar**.
+4. Escolha a função **testar** e clique em **Executar**. Na autorização, se
+   aparecer "O Google não verificou este app": **Avançado → Acessar (não
+   seguro) → Permitir**. O script é seu; a primeira linha (`@OnlyCurrentDoc`)
+   limita o acesso a **esta** planilha.
+5. Confira a aba **Cliques** com a linha `PR-TEST` (pode apagar).
+6. **Implantar → Nova implantação → App da Web**: Executar como **Eu**; Quem
+   pode acessar **Qualquer pessoa** → **Implantar**. Copie a URL (termina em
+   `/exec`) e coloque em `src/config.js` (`leadsEndpoint`).
 
-1. No editor do Apps Script: **Implantar → Nova implantação**.
-2. Em **Selecionar tipo** (engrenagem), escolha **App da Web**.
-3. Preencha:
-   - **Descrição:** `Formulário do site`
-   - **Executar como:** **Eu** (sua conta)
-   - **Quem pode acessar:** **Qualquer pessoa**
-4. Clique em **Implantar** e copie a **URL do app da Web** (termina em
-   `/exec`).
+## Atualizar o script (instalação já existente)
 
-"Qualquer pessoa" significa que o site pode enviar contatos para o script; ninguém
-consegue ler a planilha por essa URL, porque o script só grava.
+Use quando este arquivo `leads.gs` mudar:
 
-## 5. Ligar o site à planilha
+1. Na planilha, **Extensões → Apps Script**; substitua todo o código pelo novo
+   e clique em **Salvar**.
+2. Rode **testar** uma vez (pode pedir autorização de novo) e confira a aba
+   **Cliques**.
+3. **Implantar → Gerenciar implantações → ✏️ (editar) → Versão: Nova versão →
+   Implantar.** A URL continua a mesma; não é preciso mudar o site.
 
-Envie a URL copiada para quem cuida do site. Ela vai em `src/config.js`:
-
-```js
-export const leadsEndpoint = 'https://script.google.com/macros/s/XXXXXXXX/exec';
-```
-
-Depois do deploy, envie um contato de teste pelo site e confira a planilha.
-
-## Se alterar o script depois
-
-Mudanças no script só valem depois de uma nova versão da implantação:
-**Implantar → Gerenciar implantações → ✏️ (editar) → Versão: Nova versão →
-Implantar**. A URL continua a mesma. (Criar uma *nova implantação* gera uma URL
-diferente, que teria de ser trocada no site.)
+> **Não** use "Nova implantação" para atualizar: ela gera outra URL e o site
+> para de gravar até a URL ser trocada em `src/config.js`.
 
 ## Observações
 
-- **Spam:** o formulário tem um campo invisível que só robôs preenchem; esses
-  envios são descartados.
-- **LGPD:** a planilha guarda dados pessoais. Restrinja o compartilhamento a
-  quem atende os contatos. Antes de anunciar, o site deve ter uma política de
-  privacidade e um aviso de consentimento no formulário (previsto junto com a
-  landing page do LinkedIn).
-- **Limites:** contas Google gratuitas comportam com folga o volume de um
-  formulário de site; o aviso por e-mail tem limite de cerca de 100 e-mails/dia
-  em contas gratuitas (1.500 no Google Workspace).
+- **Clique não é mensagem enviada:** a planilha registra quem clicou. Quem de
+  fato enviou a mensagem aparece no WhatsApp com o código `Ref: PR-XXXX`.
+- **Aviso por e-mail (opcional):** preencha `NOTIFY_EMAIL` no começo do script
+  para receber um e-mail por clique (limite de ~100 e-mails/dia em contas
+  gratuitas).
+- **Privacidade:** a planilha guarda dados pessoais (IP, localização, código
+  que liga ao telefone). Compartilhe só com quem atende os contatos e apague
+  registros com mais de 24 meses (prazo informado na Política de Privacidade).

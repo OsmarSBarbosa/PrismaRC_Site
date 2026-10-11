@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { strings } from '../../i18n/pt-BR';
 import { whatsappUrl } from '../../utils/contact';
+import { sendLead } from '../../utils/leads';
 import Icon from '../Icon/Icon';
 import './InterestForm.css';
 
@@ -8,7 +9,8 @@ export default function InterestForm() {
   const { interestForm } = strings;
   const [sent, setSent] = useState(false);
 
-  // Sem backend: o envio compõe uma mensagem e abre o WhatsApp do consultor.
+  // Grava o contato na planilha (se configurada em src/config.js) e abre o
+  // WhatsApp do consultor com a mensagem já preenchida.
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData(e.target);
@@ -17,6 +19,11 @@ export default function InterestForm() {
     const phone = data.get('phone');
     const email = data.get('email');
     const message = data.get('message');
+
+    // Campo-armadilha preenchido = robô de spam: não grava nem abre o WhatsApp.
+    if (data.get('website')) return;
+
+    sendLead({ nome: name, empresa: company, telefone: phone, email, mensagem: message });
 
     const lines = [
       'Olá! Tenho interesse no Prisma Empresarial.',
@@ -61,6 +68,10 @@ export default function InterestForm() {
           </div>
 
           <form className="interest__form" onSubmit={handleSubmit}>
+            {/* Campo-armadilha contra spam: invisível para pessoas, robôs preenchem. */}
+            <div className="sr-only" aria-hidden="true">
+              <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+            </div>
             {/* Rótulos ocultos visualmente: o placeholder some ao digitar e não é
                 anunciado de forma confiável por leitores de tela. */}
             <label htmlFor="interest-name" className="sr-only">

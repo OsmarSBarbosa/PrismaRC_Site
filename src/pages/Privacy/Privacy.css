@@ -67,10 +67,6 @@
   text-decoration: underline;
 }
 
-.privacy__missing {
-  color: var(--error);
-}
-
 .privacy__back {
   white-space: nowrap;
 }

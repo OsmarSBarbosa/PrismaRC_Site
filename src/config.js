@@ -7,12 +7,10 @@ export const leadsEndpoint =
   'https://script.google.com/macros/s/AKfycbzvuJL5IOv0e7XO7XGqAztKSq42Zm5nXfJj6vdNfYY17s2YJs_8pYlCNbv5CaccBfveTQ/exec';
 
 // Responsável pelos dados (controlador), exibido na Política de Privacidade
-// (/privacidade/). Campos vazios aparecem como "a definir" na página.
+// (/privacidade/).
 export const privacyController = {
-  razaoSocial: '',
-  cnpj: '',
-  endereco: '',
-  email: '',
+  razaoSocial: 'Prisma RC Empreendimentos Imobiliarios SPE Ltda',
+  email: 'prismarc.contato@gmail.com',
 };
 
 // Prazo de guarda dos registros de cliques, citado na Política de Privacidade.

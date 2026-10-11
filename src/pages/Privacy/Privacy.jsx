@@ -5,14 +5,6 @@ import './Privacy.css';
 
 const UPDATED_AT = '11 de outubro de 2026';
 
-function Field({ label, value }) {
-  return (
-    <li>
-      <strong>{label}:</strong> {value || <em className="privacy__missing">a definir</em>}
-    </li>
-  );
-}
-
 // Política de Privacidade (LGPD). Descreve exatamente o que o rastreamento de
 // cliques (src/utils/tracking.js) coleta; mantenha os dois em sincronia.
 export default function Privacy() {
@@ -46,10 +38,13 @@ export default function Privacy() {
 
           <h2>1. Quem é o responsável pelos seus dados</h2>
           <ul>
-            <Field label="Razão social" value={c.razaoSocial} />
-            <Field label="CNPJ" value={c.cnpj} />
-            <Field label="Endereço" value={c.endereco} />
-            <Field label="Contato para assuntos de privacidade" value={c.email} />
+            <li>
+              <strong>Razão social:</strong> {c.razaoSocial}
+            </li>
+            <li>
+              <strong>Contato para assuntos de privacidade:</strong>{' '}
+              <a href={`mailto:${c.email}`}>{c.email}</a>
+            </li>
           </ul>
 
           <h2>2. Quais dados coletamos</h2>
@@ -162,12 +157,8 @@ export default function Privacy() {
           </p>
           <p>
             Para isso, escreva para{' '}
-            {c.email ? (
-              <a href={`mailto:${c.email}`}>{c.email}</a>
-            ) : (
-              <em className="privacy__missing">a definir</em>
-            )}
-            . Se tiver o código de referência da sua mensagem (ex.: PR-7K3F), informe-o para
+            <a href={`mailto:${c.email}`}>{c.email}</a>. Se tiver o código de referência da
+            sua mensagem (ex.: PR-7K3F), informe-o para
             localizarmos o registro mais rápido. Você também pode reclamar à Autoridade Nacional
             de Proteção de Dados (ANPD).
           </p>

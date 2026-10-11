@@ -3,6 +3,7 @@ import { strings } from '../../i18n/pt-BR';
 import { whatsappUrl } from '../../utils/contact';
 import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
+import Lightbox from '../Lightbox/Lightbox';
 import './InteractivePlot.css';
 
 export default function InteractivePlot() {
@@ -19,13 +20,16 @@ export default function InteractivePlot() {
         </header>
 
         <div className="plot__board">
-          <figure
-            className={`plot__figure ${zoomed ? 'is-zoomed' : ''}`}
-            onClick={() => setZoomed((v) => !v)}
-            title="Clique para ampliar"
-          >
+          <figure className="plot__figure">
+            <button
+              type="button"
+              className="plot__open"
+              onClick={() => setZoomed(true)}
+              aria-label="Ampliar a planta do loteamento"
+              title="Clique para ampliar"
+            />
             <img
-              src={asset('brand/planta-loteamento.jpeg')}
+              src={asset('brand/planta-loteamento.webp')}
               alt={interactivePlot.planAlt}
               loading="lazy"
             />
@@ -53,14 +57,12 @@ export default function InteractivePlot() {
       </div>
 
       {zoomed && (
-        <div
-          className="plot__lightbox"
-          onClick={() => setZoomed(false)}
-          role="dialog"
-          aria-label={interactivePlot.planAlt}
-        >
-          <img src={asset('brand/planta-loteamento.jpeg')} alt={interactivePlot.planAlt} />
-        </div>
+        <Lightbox
+          src={asset('brand/planta-loteamento.webp')}
+          alt={interactivePlot.planAlt}
+          onClose={() => setZoomed(false)}
+          zoomable
+        />
       )}
     </section>
   );

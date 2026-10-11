@@ -27,7 +27,16 @@ export default function InterestForm() {
       message && `Mensagem: ${message}`,
     ].filter(Boolean);
 
-    window.open(whatsappUrl(lines.join('\n')), '_blank', 'noopener');
+    const url = whatsappUrl(lines.join('\n'));
+    // Sem 'noopener' nos parâmetros: com ele, window.open sempre retorna null e
+    // não daria para saber se o navegador bloqueou a nova aba.
+    const win = window.open(url, '_blank');
+    if (!win) {
+      // Nova aba bloqueada: abre o WhatsApp na própria aba.
+      window.location.href = url;
+      return;
+    }
+    win.opener = null;
     setSent(true);
     e.target.reset();
   };
@@ -52,11 +61,61 @@ export default function InterestForm() {
           </div>
 
           <form className="interest__form" onSubmit={handleSubmit}>
-            <input type="text" name="name" placeholder={interestForm.namePlaceholder} required />
-            <input type="text" name="company" placeholder={interestForm.companyPlaceholder} />
-            <input type="tel" name="phone" placeholder={interestForm.phonePlaceholder} required />
-            <input type="email" name="email" placeholder={interestForm.emailPlaceholder} required />
-            <textarea name="message" placeholder={interestForm.messagePlaceholder} rows={3} />
+            {/* Rótulos ocultos visualmente: o placeholder some ao digitar e não é
+                anunciado de forma confiável por leitores de tela. */}
+            <label htmlFor="interest-name" className="sr-only">
+              {interestForm.namePlaceholder}
+            </label>
+            <input
+              id="interest-name"
+              type="text"
+              name="name"
+              autoComplete="name"
+              placeholder={interestForm.namePlaceholder}
+              required
+            />
+            <label htmlFor="interest-company" className="sr-only">
+              {interestForm.companyPlaceholder}
+            </label>
+            <input
+              id="interest-company"
+              type="text"
+              name="company"
+              autoComplete="organization"
+              placeholder={interestForm.companyPlaceholder}
+            />
+            <label htmlFor="interest-phone" className="sr-only">
+              {interestForm.phonePlaceholder}
+            </label>
+            <input
+              id="interest-phone"
+              type="tel"
+              name="phone"
+              autoComplete="tel"
+              inputMode="tel"
+              placeholder={interestForm.phonePlaceholder}
+              required
+            />
+            <label htmlFor="interest-email" className="sr-only">
+              {interestForm.emailPlaceholder}
+            </label>
+            <input
+              id="interest-email"
+              type="email"
+              name="email"
+              autoComplete="email"
+              placeholder={interestForm.emailPlaceholder}
+              required
+            />
+            <label htmlFor="interest-message" className="sr-only">
+              {interestForm.messagePlaceholder}
+            </label>
+            <textarea
+              id="interest-message"
+              name="message"
+              placeholder={interestForm.messagePlaceholder}
+              rows={3}
+            />
             <button type="submit" className="btn btn-primary interest__submit">
               {interestForm.submitButton}
               <Icon name="arrow" size={18} />

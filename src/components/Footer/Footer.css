@@ -47,7 +47,7 @@
   max-width: 280px;
 }
 
-.footer__col h4 {
+.footer__col h2 {
   color: var(--white);
   font-size: 0.95rem;
   letter-spacing: 0.04em;
@@ -112,5 +112,25 @@
     height: 54px;
     bottom: 18px;
     right: 18px;
+  }
+
+  /* Espaço livre no fim da página para o botão flutuante não cobrir o texto */
+  .footer__legal {
+    padding-bottom: calc(1.75rem + 72px);
+  }
+
+  /* Áreas de toque de pelo menos 44px */
+  .footer__col ul {
+    gap: 0;
+  }
+
+  .footer__col a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .footer__contact span {
+    padding-block: 0.6rem;
   }
 }

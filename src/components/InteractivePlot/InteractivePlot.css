@@ -26,7 +26,6 @@
   border: 1px solid var(--gray-100);
   border-radius: var(--radius-lg);
   padding: 1rem;
-  cursor: zoom-in;
   box-shadow: var(--shadow-sm);
 }
 
@@ -35,10 +34,29 @@
   border-radius: var(--radius-md);
 }
 
+.plot__open {
+  /* área clicável sobre toda a planta (abre o visualizador) */
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  border: none;
+  border-radius: inherit;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.plot__open:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* À esquerda, para não ficar sob o botão flutuante do WhatsApp no celular */
 .plot__zoom-hint {
   position: absolute;
   top: 1.5rem;
-  right: 1.5rem;
+  left: 1.5rem;
+  pointer-events: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -87,39 +105,12 @@
   color: var(--navy-dark);
 }
 
-/* Lightbox */
-.plot__lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: rgba(15, 21, 41, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  cursor: zoom-out;
-  animation: plot-fade 0.2s ease;
-}
-
-.plot__lightbox img {
-  max-width: 100%;
-  max-height: 92vh;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-}
-
-@keyframes plot-fade {
-  from {
-    opacity: 0;
-  }
-}
-
 @media (max-width: 860px) {
   .plot__board {
     grid-template-columns: 1fr;
   }
 
-  .plot__legend {
+  .plot__aside {
     position: static;
   }
 }

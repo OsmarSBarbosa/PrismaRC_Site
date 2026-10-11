@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { strings } from '../../i18n/pt-BR';
 import { whatsappUrl } from '../../utils/contact';
 import { asset } from '../../utils/asset';
@@ -15,6 +15,7 @@ export default function Navbar() {
   const { nav } = strings;
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const headerRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -23,10 +24,27 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // Menu mobile aberto: fecha com Esc ou com toque fora do cabeçalho.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false);
+    };
+    const onPointerDown = (e) => {
+      if (!headerRef.current?.contains(e.target)) setOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, [open]);
+
   const close = () => setOpen(false);
 
   return (
-    <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+    <header ref={headerRef} className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__inner container">
         <a
           href="#home"
@@ -37,7 +55,7 @@ export default function Navbar() {
           <img src={asset('brand/logo-prisma.png')} alt="Prisma Empresarial" />
         </a>
 
-        <nav className={`navbar__nav ${open ? 'is-open' : ''}`}>
+        <nav id="navbar-menu" className={`navbar__nav ${open ? 'is-open' : ''}`}>
           <ul>
             {links.map(({ key, href }) => (
               <li key={key}>
@@ -63,6 +81,7 @@ export default function Navbar() {
           className="navbar__toggle"
           aria-label={open ? 'Fechar menu' : 'Abrir menu'}
           aria-expanded={open}
+          aria-controls="navbar-menu"
           onClick={() => setOpen((v) => !v)}
         >
           <span />

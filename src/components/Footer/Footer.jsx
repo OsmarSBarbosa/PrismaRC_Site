@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
 
           <nav className="footer__col">
-            <h4>{footer.navTitle}</h4>
+            <h2>{footer.navTitle}</h2>
             <ul>
               {navLinks.map((link) => (
                 <li key={link.href}>
@@ -45,7 +45,7 @@ export default function Footer() {
           </nav>
 
           <div className="footer__col">
-            <h4>{footer.contactTitle}</h4>
+            <h2>{footer.contactTitle}</h2>
             <ul className="footer__contact">
               <li>
                 <a href={telUrl()}>

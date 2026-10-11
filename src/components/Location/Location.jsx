@@ -3,6 +3,19 @@ import { mapsUrl, mapsEmbedUrl } from '../../utils/contact';
 import Icon from '../Icon/Icon';
 import './Location.css';
 
+// Mantém códigos de rodovia (ex.: "SP-348") inteiros, sem quebrar no hífen.
+function keepRoadCodes(text) {
+  return text.split(/(SP-\d+)/).map((part, i) =>
+    /^SP-\d+$/.test(part) ? (
+      <span key={i} className="location__code">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+}
+
 export default function Location() {
   const { location } = strings;
   return (
@@ -24,7 +37,7 @@ export default function Location() {
               <ul>
                 {location.highways.map((item) => (
                   <li key={item.name}>
-                    <span>{item.name}</span>
+                    <span>{keepRoadCodes(item.name)}</span>
                     <strong>{item.time}</strong>
                   </li>
                 ))}
@@ -39,7 +52,7 @@ export default function Location() {
               <ul>
                 {location.cities.map((item) => (
                   <li key={item.name}>
-                    <span>{item.name}</span>
+                    <span>{keepRoadCodes(item.name)}</span>
                     <strong>{item.time}</strong>
                   </li>
                 ))}
@@ -71,7 +84,7 @@ export default function Location() {
               {location.landmarks.map((item) => (
                 <li key={item}>
                   <Icon name="pin" size={16} />
-                  {item}
+                  <span>{keepRoadCodes(item)}</span>
                 </li>
               ))}
             </ul>

@@ -71,6 +71,7 @@ const paths = {
     </>
   ),
   arrow: <path d="M5 12h14M13 6l6 6-6 6" />,
+  close: <path d="M6 6l12 12M18 6 6 18" />,
   whatsapp: (
     <path
       fill="currentColor"

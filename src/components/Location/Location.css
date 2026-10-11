@@ -57,6 +57,10 @@
   color: var(--gray-700);
 }
 
+.location__code {
+  white-space: nowrap;
+}
+
 .location__panel li strong {
   font-family: var(--font-heading);
   color: var(--accent);

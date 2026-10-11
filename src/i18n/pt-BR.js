@@ -33,7 +33,7 @@ export const strings = {
     ctaPrimary: 'Quero saber mais',
     ctaSecondary: 'Ver os lotes',
     stats: [
-      { value: '600m²', label: 'Lotes a partir de' },
+      { value: '600m²', label: 'Área mínima por lote' },
       { value: '98', label: 'Lotes' },
       { value: '+100mil m²', label: 'De área útil' },
       { value: 'CETESB', label: 'Licenciado (FC 5)' },
@@ -193,7 +193,7 @@ export const strings = {
     emailPlaceholder: 'E-mail',
     messagePlaceholder: 'Conte um pouco sobre a sua necessidade (opcional)',
     submitButton: 'Enviar interesse',
-    successMessage: 'Recebemos seu contato! Falaremos com você em breve.',
+    successMessage: 'Abrimos o WhatsApp com sua mensagem. É só tocar em enviar.',
     errorMessage: 'Algo deu errado. Tente novamente ou fale pelo WhatsApp.',
     whatsappAlt: 'Prefere falar agora? Chame no WhatsApp.',
   },

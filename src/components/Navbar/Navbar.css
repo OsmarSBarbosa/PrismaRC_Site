@@ -100,14 +100,32 @@
     box-shadow: var(--shadow-lg);
     transform: translateY(-150%);
     opacity: 0;
+    /* visibility: hidden tira os links do Tab quando o menu está fechado;
+       o atraso deixa a animação de saída terminar antes de ocultar */
+    visibility: hidden;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
   .navbar__nav.is-open {
     transform: translateY(0);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s;
+  }
+
+  /* Ícone ☰ vira × quando o menu está aberto */
+  .navbar__toggle[aria-expanded='true'] span:nth-child(1) {
+    transform: translateY(7.5px) rotate(45deg);
+  }
+
+  .navbar__toggle[aria-expanded='true'] span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar__toggle[aria-expanded='true'] span:nth-child(3) {
+    transform: translateY(-7.5px) rotate(-45deg);
   }
 
   .navbar__nav ul {

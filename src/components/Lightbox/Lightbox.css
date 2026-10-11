@@ -1,0 +1,83 @@
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(15, 21, 41, 0.92);
+  cursor: zoom-out;
+  animation: lightbox-fade 0.2s ease;
+}
+
+.lightbox__scroller {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  padding: 4rem 1rem 3.5rem;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.lightbox__img {
+  /* margin: auto centraliza sem cortar a imagem quando ela excede a tela */
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  cursor: default;
+}
+
+.lightbox__img.is-zoomable {
+  cursor: zoom-in;
+}
+
+.lightbox__scroller.is-zoomed .lightbox__img {
+  max-width: none;
+  max-height: none;
+  border-radius: 0;
+  cursor: zoom-out;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(15, 21, 41, 0.75);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35);
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.lightbox__close:hover,
+.lightbox__close:focus-visible {
+  background: rgba(15, 21, 41, 0.95);
+}
+
+.lightbox__hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--white);
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+@keyframes lightbox-fade {
+  from {
+    opacity: 0;
+  }
+}

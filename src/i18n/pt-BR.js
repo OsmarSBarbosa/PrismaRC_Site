@@ -27,7 +27,7 @@ export const strings = {
   // --- Hero (banner principal) ---
   hero: {
     eyebrow: 'Loteamento Industrial · Rio Claro/SP',
-    title: 'O espaço estratégico da sua expansão',
+    title: 'Construa já',
     subtitle:
       'Loteamento empresarial planejado para indústria, comércio e serviços. Lotes a partir de 600m², infraestrutura completa e licenciamento CETESB para qualquer atividade.',
     ctaPrimary: 'Quero saber mais',

@@ -197,12 +197,6 @@ export const strings = {
     ],
   },
 
-  // --- Aviso de privacidade (rodapé fixo) ---
-  privacyNotice: {
-    text: 'Este site registra dados de navegação, como dispositivo, origem da visita e localização aproximada pelo IP, para medir o alcance das nossas campanhas.',
-    linkLabel: 'Política de Privacidade',
-    button: 'Entendi',
-  },
 
   // --- Contato ---
   contact: {
@@ -227,6 +221,7 @@ export const strings = {
       'Projeto aprovado pela Prefeitura Municipal de Rio Claro e registrado no 1º Oficial de Registro de Imóveis de Rio Claro sob o nº R.9 da matrícula 54.383, em 08 de março de 2019. Todas as imagens são meramente ilustrativas, podendo haver diferenças no paisagismo.',
     navTitle: 'Navegação',
     contactTitle: 'Contato',
+    privacyLink: 'Política de Privacidade',
     whatsappCta: 'WhatsApp',
   },
 };

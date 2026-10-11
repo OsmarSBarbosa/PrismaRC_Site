@@ -137,9 +137,8 @@ export default function Privacy() {
           <h2>6. Dados guardados no seu navegador</h2>
           <p>
             Guardamos no armazenamento local do navegador o identificador aleatório, o número de
-            visitas, a data da primeira visita e o registro de que você viu o aviso de
-            privacidade. A origem da visita e a localização aproximada ficam apenas até você
-            fechar o navegador. Você pode apagar esses dados a qualquer momento nas
+            visitas e a data da primeira visita. A origem da visita e a localização aproximada
+            ficam apenas até você fechar o navegador. Você pode apagar esses dados a qualquer momento nas
             configurações do navegador (limpar dados do site).
           </p>
 

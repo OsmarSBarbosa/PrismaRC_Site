@@ -72,7 +72,7 @@ export default function Footer() {
             <p className="footer__rights">
               {footer.rights}{' '}
               <a href={`${home}privacidade/`} className="footer__privacy">
-                {strings.privacyNotice.linkLabel}
+                {footer.privacyLink}
               </a>
             </p>
           </div>

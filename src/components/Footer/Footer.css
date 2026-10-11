@@ -120,8 +120,7 @@
   .float-wpp {
     width: 54px;
     height: 54px;
-    /* sobe acima do aviso de privacidade enquanto ele estiver visível */
-    bottom: calc(18px + var(--notice-h, 0px));
+    bottom: 18px;
     right: 18px;
   }
 

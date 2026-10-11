@@ -10,7 +10,6 @@ import Gallery from './components/Gallery/Gallery';
 import WhatsAppCta from './components/WhatsAppCta/WhatsAppCta';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import PrivacyNotice from './components/PrivacyNotice/PrivacyNotice';
 import { observeSections } from './utils/tracking';
 
 export default function App() {
@@ -31,7 +30,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <PrivacyNotice />
     </>
   );
 }

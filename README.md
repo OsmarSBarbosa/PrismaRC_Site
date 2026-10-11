@@ -21,7 +21,7 @@ npm run preview  # pré-visualiza o build
   utilitários globais (`.container`, `.section`, `.btn`).
 - `src/components/*` — cada seção tem seu `.jsx` + `.css`:
   Navbar, Hero, Tagline, About, Features, Location, InteractivePlot, Gallery,
-  WhatsAppCta, Contact, Footer, PrivacyNotice. Ícones em `src/components/Icon`.
+  WhatsAppCta, Contact, Footer. Ícones em `src/components/Icon`.
 - `src/utils/contact.js` — helpers de WhatsApp, Google Maps e telefone.
 - `public/brand/` — logos, planta, mapa de acessos e imagens do empreendimento.
 

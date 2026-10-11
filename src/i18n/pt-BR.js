@@ -198,6 +198,16 @@ export const strings = {
   },
 
 
+  // --- Landing page dos anúncios do LinkedIn (/linkedin/) ---
+  linkedinLanding: {
+    title: 'O PRISMA Empresarial está pronto para receber sua empresa',
+    subtitle: 'Clique no botão para obter todas as informações sobre o loteamento.',
+    buttonLabel: 'Chamar no WhatsApp',
+    whatsappMessage:
+      'Olá! Vi o anúncio do Prisma Empresarial no LinkedIn e gostaria de obter todas as informações sobre o loteamento.',
+    siteLink: 'Acesse o site clicando neste link',
+  },
+
   // --- Contato ---
   contact: {
     tag: 'Contato',

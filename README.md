@@ -31,7 +31,9 @@ npm run preview  # pré-visualiza o build
   de WhatsApp/telefone é registrado numa planilha do Google, com um código de
   referência que também vai na mensagem (`src/utils/tracking.js`; instalação
   e colunas em `docs/LEADS-PLANILHA.md`).
-- Páginas: `index.html` (site) e `privacidade/index.html` (Política de
-  Privacidade). Dados do responsável e prazo de guarda em `src/config.js`.
+- Páginas: `index.html` (site), `linkedin/index.html` (landing page dos
+  anúncios do LinkedIn, fora dos buscadores) e `privacidade/index.html`
+  (Política de Privacidade). Dados do responsável e prazo de guarda em
+  `src/config.js`.
 - O número de WhatsApp/telefone está em `contactInfo` (`src/i18n/pt-BR.js`).
   Em uso: **(19) 99998-2692**.

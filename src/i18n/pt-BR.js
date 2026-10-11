@@ -181,21 +181,27 @@ export const strings = {
     altPrefix: 'Prisma Empresarial',
   },
 
-  // --- Formulário de interesse ---
-  interestForm: {
+  // --- Chamada para o WhatsApp (substitui o formulário) ---
+  whatsappCta: {
     tag: 'Fale conosco',
     heading: 'Garanta o seu lote no Prisma Empresarial',
     subheading:
-      'Preencha o formulário e um de nossos consultores entrará em contato para apresentar o empreendimento.',
-    namePlaceholder: 'Nome completo',
-    companyPlaceholder: 'Empresa (opcional)',
-    phonePlaceholder: 'WhatsApp / Telefone',
-    emailPlaceholder: 'E-mail',
-    messagePlaceholder: 'Conte um pouco sobre a sua necessidade (opcional)',
-    submitButton: 'Enviar interesse',
-    successMessage: 'Abrimos o WhatsApp com sua mensagem. É só tocar em enviar.',
-    errorMessage: 'Algo deu errado. Tente novamente ou fale pelo WhatsApp.',
-    whatsappAlt: 'Prefere falar agora? Chame no WhatsApp.',
+      'Fale agora com um de nossos consultores pelo WhatsApp. Um toque e a conversa já abre com a mensagem pronta.',
+    buttonLabel: 'Chamar no WhatsApp',
+    phonePrefix: 'ou ligue',
+    benefits: [
+      'Disponibilidade atualizada dos lotes',
+      'Valores e condições de pagamento',
+      'Composição de áreas de até 10.000m²',
+      'Agendamento de visita ao empreendimento',
+    ],
+  },
+
+  // --- Aviso de privacidade (rodapé fixo) ---
+  privacyNotice: {
+    text: 'Este site registra dados de navegação, como dispositivo, origem da visita e localização aproximada pelo IP, para medir o alcance das nossas campanhas.',
+    linkLabel: 'Política de Privacidade',
+    button: 'Entendi',
   },
 
   // --- Contato ---

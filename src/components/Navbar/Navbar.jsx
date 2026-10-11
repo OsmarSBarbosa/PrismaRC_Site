@@ -70,6 +70,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-whatsapp navbar__cta"
+            data-botao="menu"
             onClick={close}
           >
             <Icon name="whatsapp" size={18} />

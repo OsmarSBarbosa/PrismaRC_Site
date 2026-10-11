@@ -48,6 +48,7 @@ export default function InteractivePlot() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn plot__cta"
+              data-botao="lotes"
             >
               <Icon name="whatsapp" size={20} />
               {interactivePlot.ctaText}

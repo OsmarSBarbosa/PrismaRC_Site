@@ -4,10 +4,12 @@ import { asset } from '../../utils/asset';
 import Icon from '../Icon/Icon';
 import './Footer.css';
 
+// Caminhos a partir da raiz: o rodapé também aparece na página de privacidade.
+const home = import.meta.env.BASE_URL;
 const navLinks = [
-  { label: strings.nav.about, href: '#about' },
-  { label: strings.nav.features, href: '#features' },
-  { label: strings.nav.location, href: '#location' },
+  { label: strings.nav.about, href: `${home}#about` },
+  { label: strings.nav.features, href: `${home}#features` },
+  { label: strings.nav.location, href: `${home}#location` },
 ];
 
 export default function Footer() {
@@ -22,6 +24,7 @@ export default function Footer() {
         rel="noopener noreferrer"
         aria-label={footer.whatsappCta}
         className="float-wpp"
+        data-botao="flutuante"
       >
         <Icon name="whatsapp" size={30} />
       </a>
@@ -48,7 +51,7 @@ export default function Footer() {
             <h2>{footer.contactTitle}</h2>
             <ul className="footer__contact">
               <li>
-                <a href={telUrl()}>
+                <a href={telUrl()} data-botao="rodape-telefone">
                   <Icon name="phone" size={16} />
                   {contactInfo.phoneDisplay}
                 </a>
@@ -66,7 +69,12 @@ export default function Footer() {
         <div className="footer__legal">
           <div className="container">
             <p className="footer__legal-text">{footer.legal}</p>
-            <p className="footer__rights">{footer.rights}</p>
+            <p className="footer__rights">
+              {footer.rights}{' '}
+              <a href={`${home}privacidade/`} className="footer__privacy">
+                {strings.privacyNotice.linkLabel}
+              </a>
+            </p>
           </div>
         </div>
       </footer>

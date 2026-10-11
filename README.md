@@ -21,14 +21,17 @@ npm run preview  # pré-visualiza o build
   utilitários globais (`.container`, `.section`, `.btn`).
 - `src/components/*` — cada seção tem seu `.jsx` + `.css`:
   Navbar, Hero, Tagline, About, Features, Location, InteractivePlot, Gallery,
-  InterestForm, Contact, Footer. Ícones em `src/components/Icon`.
+  WhatsAppCta, Contact, Footer, PrivacyNotice. Ícones em `src/components/Icon`.
 - `src/utils/contact.js` — helpers de WhatsApp, Google Maps e telefone.
 - `public/brand/` — logos, planta, mapa de acessos e imagens do empreendimento.
 
 ## Notas
 
-- O formulário de interesse não tem backend: o envio compõe uma mensagem e
-  abre o WhatsApp do consultor. Para integrar um backend/CRM, ajuste
-  `handleSubmit` em `src/components/InterestForm/InterestForm.jsx`.
+- O site não tem formulário: o contato é pelo WhatsApp. Cada clique nos botões
+  de WhatsApp/telefone é registrado numa planilha do Google, com um código de
+  referência que também vai na mensagem (`src/utils/tracking.js`; instalação
+  e colunas em `docs/LEADS-PLANILHA.md`).
+- Páginas: `index.html` (site) e `privacidade/index.html` (Política de
+  Privacidade). Dados do responsável e prazo de guarda em `src/config.js`.
 - O número de WhatsApp/telefone está em `contactInfo` (`src/i18n/pt-BR.js`).
   Em uso: **(19) 99998-2692**.
